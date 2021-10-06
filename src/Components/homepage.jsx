@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Products from './products';
+
 
 class HomePage extends React.Component {
     render() { 

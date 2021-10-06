@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import Product from './product';
 import axios from 'axios';
 
@@ -6,6 +6,7 @@ class Products extends React.Component {
     state = {
         products: [],
       };
+      
       componentDidMount() {
         axios.get('http://localhost:3001/products')
         .then((res, err) =>{
@@ -16,7 +17,7 @@ class Products extends React.Component {
         return (
            <React.Fragment>
                
-               {this.state.products.map(p => <Product key={p.id} product={p} />)}
+               {this.state.products.map((p) => (<Product key={p.id} product={p} />))}
                </React.Fragment>
         );
     }

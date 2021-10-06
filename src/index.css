@@ -21,4 +21,9 @@ img{
   display: inline-block;
   margin: 20px;
 }
+.md-outline.select-wrapper+label {
+  top: .5em !important;
+  z-index: 2 !important;
+ 
+  }
 

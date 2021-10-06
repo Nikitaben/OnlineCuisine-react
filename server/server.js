@@ -1,3 +1,5 @@
+
+
 const express = require("express");
 const parser = require("body-parser");
 const cors = require("cors");
@@ -14,7 +16,7 @@ const products = [{
     description: 'Freshly baked pizza with Paneer Tikka cubes, onions, green peppers and mozzarella cheese. Garnished with cilantro. Sure to be a hit with veggie lovers',
     imageUrl: '../images/Tandoori Paneer Naan Pizza.jpg',
     toppings: [],
-    sizes: "Size.LARGE, Size.MEDIUM, Size.SMALL"
+    //sizes: [Size.large, Size.medium, Size.small]
 },
 
 {
@@ -24,11 +26,12 @@ const products = [{
    description: 'Signature Seasoned Fries. A little on a tingled side',
    imageUrl: '../images/Masala Fries.jpg',
    toppings: [],
-   sizes: "Size.SMALL, Size.LARGE"
+   //sizes: 'Size.SMALL, Size.LARGE'
   },
 
 
 ];
+
 
 app.get("/products", (req, res) => res.send(products));
 
