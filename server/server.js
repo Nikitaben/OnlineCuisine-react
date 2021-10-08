@@ -34,6 +34,13 @@ const products = [{
 
 
 app.get("/products", (req, res) => res.send(products));
+app.get("/products/:id", (req, res) => {
+    const id = req.params.id;
+    const product = products.find((p) => p.id === id);
+
+    if (product) res.send(product);
+    res.status(404).send(`Product with id = ${id} doesn't exist`);
+})
 
 app.listen(PORT, () => console.log("server running: " + PORT));
 

@@ -7,9 +7,7 @@ import HomePage from "./Components/homepage";
 import ProductPage from "./Components/productpage";
 import {
   BrowserRouter,
-  Switch,
-  Route,
-  Link
+  
 } from "react-router-dom";
 
 
@@ -25,7 +23,7 @@ class App extends React.Component {
            <BrowserRouter>
             
           <Header/>
-          <Route exact path="/" components={HomePage}/>
+          <HomePage/>
           <Products products={this.state.products}></Products>
           <ProductPage/>
           
