@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-
+import React from 'react';
+import Products from './products';
 
 class HomePage extends React.Component {
     render() { 
@@ -9,7 +9,7 @@ class HomePage extends React.Component {
           <h2>Welcome to our Indian Tandoor Cuisine</h2>
           <h3>What is your choice?</h3>
         </div>
-
+        <Products/>
         </React.Fragment>
         );
     }

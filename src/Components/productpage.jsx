@@ -1,49 +1,51 @@
-import React, { Component } from 'react';
+import React from 'react';
 import axios from 'axios';
 
 
 
 class ProductPage extends React.Component {
-         state = {products: []}
-         server = "http://localhost:3001/products"
-        handleblur =(id) =>{
+         state = {product: [], };
+         server = "http://localhost:3001/products";
+        componentDidMount = () => {
+                const id = this.props.match.params.id;
                 axios
                 .get(this.server + "/" + id)
                 .then((res, err) => {
                         const product = res.data;
                         this.setState({product});
-                })
-        }
+                });
+        };
 
 
 render(){
         return (
             <React.Fragment>
-
+                <div className="container">
                     
-               
-              
-               <div className="center">
-                <div className="col-md-6 select-outline">
-
-                <select className="mdb-select md-form md-outline colorful-select dropdown-primary">
-                <option value="disabled selected">Choose your option</option>
-                <option value="1">Small</option>
-                <option value="2">Medium</option>
-                <option value="3">Large</option>
-                </select>
+                    <div className="card space shadow-em">
+                       <div className="card-body">
+                           <h5 className="card-title ">{this.state.product.name}</h5>
+                           <h4 className="card-subtitle">{this.state.product.price}</h4>
+                           <img src={this.state.product.imageUrl} alt={ this.state.product.name } className="img-responsive float-end card-img" />
+                         <div className="card-text">
+                             <p>{this.state.product.description}</p>
                 <div>
+                 
+                <button
                 
-                            <button
-                data-item-id="product.id"
-                data-item-name="product.name"
-                data-item-price="product.price"
-                data-item-image="product.imageUrl"
-                className="snipcart-add-item">Add to Cart</button>
+                data-item-id={this.state.product.id}
+                data-item-name={this.state.product.name}
+                data-item-price={this.state.product.price}
+                data-item-image={this.state.product.imageUrl}
+                data-item-description={this.state.product.description}
+               
+                className="btn btn-primary snipcart-add-item">Add to Cart</button>
                 </div>
-                        </div>
-            </div>
-                
+                </div>
+                </div>
+                </div>     
+        
+                </div> 
             </React.Fragment>
         );
         }

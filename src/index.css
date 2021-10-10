@@ -16,15 +16,11 @@ img{
   height: 200px !important;
   margin: 20px;
 }
-.card{
+.card, card-title, card-subtitle{
   cursor: pointer;
-  display: inline-block;
+ float: left;
   margin: 20px;
+  text-align: center;
 }
-.md-outline.select-wrapper+label {
-  top: .5em !important;
-  z-index: 2 !important;
- 
-  }
- 
+
 
