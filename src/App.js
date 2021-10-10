@@ -6,7 +6,7 @@ import Header from "./Components/header";
 import HomePage from "./Components/homepage";
 import ProductPage from "./Components/productpage";
 import {
-  BrowserRouter,Switch,
+  BrowserRouter as Router, Switch,
   Route
   
 } from "react-router-dom";
@@ -20,21 +20,23 @@ class App extends React.Component {
  
   render(){
   return (
-    <BrowserRouter>
+    <Router>
         <React.Fragment>
       
           <Header/>
           <Switch>
-          < Route path='/' component={HomePage}/>
+          <Route path='/product/:id' component={ProductPage}/> 
+          
+          <Route path='/' component={HomePage}/>
           <Route path='/products' component={Products}/>
-          {/* <Route path='/product/:id' exact component={ProductPage}/> */}
           <ProductPage/>
+         
           
           
       
      </Switch>
         </React.Fragment>
-        </BrowserRouter>
+        </Router>
       );
   }  
 }

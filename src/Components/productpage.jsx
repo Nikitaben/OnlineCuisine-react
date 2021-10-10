@@ -23,29 +23,29 @@ render(){
                 <div className="container">
                     
                     <div className="card space shadow-em">
-                       <div className="card-body">
-                           <h5 className="card-title ">{this.state.product.name}</h5>
-                           <h4 className="card-subtitle">{this.state.product.price}</h4>
-                           <img src={this.state.product.imageUrl} alt={ this.state.product.name } className="img-responsive float-end card-img" />
-                         <div className="card-text">
-                             <p>{this.state.product.description}</p>
-                <div>
-                 
-                <button
+                     <div className="card-body">
+                     <h5 className="card-title ">{this.state.product.name}</h5>
+                     <h4 className="card-subtitle">{this.state.product.price}</h4>
+                     <img src={this.state.product.imageUrl} alt={ this.state.product.name } className="img-responsive float-end card-img" />
+                     <div className="card-text">
+                     <p>{this.state.product.description}</p>
                 
+                 
+                <button class="btn btn-primary snipcart-add-item"
                 data-item-id={this.state.product.id}
                 data-item-name={this.state.product.name}
                 data-item-price={this.state.product.price}
                 data-item-image={this.state.product.imageUrl}
                 data-item-description={this.state.product.description}
                
-                className="btn btn-primary snipcart-add-item">Add to Cart</button>
+                data-item-custom1-name="Sizes"
+                data-item-custom1-options="Small|Medium[+4.00]|Large[+5.00]">Add to cart</button>
                 </div>
                 </div>
                 </div>
                 </div>     
         
-                </div> 
+                
             </React.Fragment>
         );
         }
