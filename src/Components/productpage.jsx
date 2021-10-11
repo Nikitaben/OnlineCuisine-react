@@ -5,7 +5,7 @@ import axios from 'axios';
 
 class ProductPage extends React.Component {
          state = {product: [], };
-         server = "http://localhost:3001/products";
+         server = "https://warm-beyond-92583.herokuapp.com/products";
         componentDidMount = () => {
                 const id = this.props.match.params.id;
                 axios
